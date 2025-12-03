@@ -2,581 +2,183 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Residencial Alejandra - Otaño | BG Negocios Inmobiliarios</title>
+  <title>BG Negocios Inmobiliarios - Terrenos en Caaguazú</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Residencial Alejandra en Otaño: lotes de 12x30 con infraestructura proyectada, naturaleza, plazas, cancha de tenis y lago artificial. Financiación propia hasta 130 meses.">
+  <meta name="description" content="BG Negocios Inmobiliarios, asesoría independiente liderada por Pedro Benítez. Terrenos de distintas inmobiliarias y desarrolladoras en Caaguazú.">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-    body { background: #f5f6f8; color: #222; }
 
+    body { background: #ffffff; color: #222222; }
+    
     a { color: inherit; text-decoration: none; }
 
-    /* HEADER */
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e0e4ea;
-      padding: 10px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 32px; border-bottom: 1px solid #e0e4ea;
+      position: sticky; top: 0; background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(5px); z-index: 10;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { height: 42px; width: auto; }
 
-    .logo-bg,
-    .logo-lega {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .logo-bg img {
-      height: 38px;
-      width: auto;
-      border-radius: 6px;
-    }
-
-    .logo-lega img {
-      height: 30px;
-      width: auto;
-      border-radius: 4px;
-    }
-
-    .logo-text-main { font-weight: bold; font-size: 17px; color: #2E7D32; }
+    .logo-text-main { font-weight: bold; font-size: 18px; color: #2E7D32; }
     .logo-text-sub { font-size: 11px; color: #6b7a6f; }
 
-    .logo-lega-text {
-      font-size: 10px;
-      color: #6b7a6f;
-      line-height: 1.4;
-    }
-
-    nav a {
-      margin-left: 14px;
-      font-size: 13px;
-      color: #2f3439;
-    }
-
+    nav a { margin-left: 16px; color: #26332b; font-size: 14px; }
     nav a:hover { color: #2E7D32; }
 
-    /* LAYOUT GENERAL */
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px;
+    .hero {
+      min-height: 70vh; display: flex; align-items: center; justify-content: space-between;
+      padding: 40px; gap: 32px; background: linear-gradient(135deg, #f4f8f5, #ffffff);
+      border-bottom: 1px solid #e0e4ea;
     }
 
-    .breadcrumb {
-      font-size: 12px;
-      color: #7b828a;
-      margin-bottom: 12px;
+    .hero-text { max-width: 520px; }
+    .label { display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; padding: 4px 10px; border-radius: 999px;
+      border: 1px solid #cfd8dc; margin-bottom: 10px; color: #4b5b4f;
+    }
+    .label-dot { width: 8px; height: 8px; background: #2E7D32; border-radius: 50%; }
+
+    .hero h1 { font-size: 32px; margin-bottom: 16px; color: #1f2a24; }
+    .hero p { margin-bottom: 24px; color: #4d5850; }
+
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { padding: 10px 18px; border-radius: 999px; cursor: pointer; font-size: 14px; border: none; }
+    .btn-primary { background: #2E7D32; color: white; }
+    .btn-primary:hover { background: #256428; }
+    .btn-outline { background: transparent; color: #2E7D32; border: 1px solid #2E7D32; }
+    .btn-outline:hover { background: #e8f4ea; }
+
+    .hero-image {
+      flex: 1; min-height: 250px; border-radius: 20px;
+      background-image: url('img/imgalejandra-real-1.jpg');
+      background-size: cover; background-position: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative;
     }
 
-    .breadcrumb a { color: #2E7D32; }
-    .breadcrumb span { margin: 0 4px; }
-
-    .main-title {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 4px;
-      color: #222;
+    .hero-overlay-card {
+      position: absolute; bottom: 12px; right: 12px;
+      background: rgba(255,255,255,0.92); padding: 10px;
+      border-radius: 12px; font-size: 11px; border: 1px solid #d1d9de;
     }
+    .hero-overlay-card strong { color: #2E7D32; }
 
-    .subtitle {
-      font-size: 13px;
-      color: #6b7a6f;
-      margin-bottom: 12px;
+    section { padding: 40px 32px; }
+    h2 { font-size: 24px; margin-bottom: 8px; color: #26332b; }
+    .section-subtitle { font-size: 13px; color: #6b7a6f; margin-bottom: 18px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 16px; }
+    .card { padding: 16px; border-radius: 16px; border: 1px solid #e0e4ea; background: #fff; }
+
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      border-radius: 16px; box-shadow: 0 10px 30px rgba(15,23,42,0.18);
     }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid #d2d7dd;
-      background: #ffffff;
-      color: #4a525b;
-    }
-
-    .tag-green {
-      border-color: #2E7D32;
-      color: #2E7D32;
-      background: #eaf5ec;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    /* GALERÍA */
-    .gallery-card {
-      background: #ffffff;
-      border-radius: 8px;
-      border: 1px solid #dde2ea;
-      padding: 8px;
-    }
-
-    .main-image {
-      width: 100%;
-      height: 360px;
-      border-radius: 6px;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 8px;
-    }
-
-    .thumbs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-      gap: 6px;
-    }
-
-    .thumb {
-      height: 60px;
-      border-radius: 4px;
-      background-size: cover;
-      background-position: center;
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-
-    .thumb:hover {
-      border-color: #2E7D32;
-    }
-
-    /* PANEL DERECHO (RESUMEN) */
-    .summary-card {
-      background: #ffffff;
-      border-radius: 8px;
-      border: 1px solid #dde2ea;
-      padding: 16px;
-    }
-
-    .price {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 4px;
-      color: #222;
-    }
-
-    .price-small {
-      font-size: 13px;
-      color: #4a525b;
-      margin-bottom: 8px;
-    }
-
-    .code {
-      font-size: 11px;
-      color: #7b828a;
-      margin-bottom: 10px;
-    }
-
-    .summary-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 12px;
-      margin-bottom: 16px;
-      color: #4a525b;
-    }
-
-    .summary-item strong {
-      display: block;
-      font-size: 13px;
-      color: #222;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .btn-primary {
-      background: #2E7D32;
-      color: #ffffff;
-      width: 100%;
-      margin-bottom: 8px;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #2E7D32;
-      border: 1px solid #2E7D32;
-      width: 100%;
-    }
-
-    .contact-note {
-      font-size: 11px;
-      color: #7b828a;
-      margin-top: 8px;
-    }
-
-    /* SECCIONES DETALLE */
-    .section-card {
-      background: #ffffff;
-      border-radius: 8px;
-      border: 1px solid #dde2ea;
-      padding: 16px;
-      margin-top: 16px;
-    }
-
-    .section-card h3 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: #222;
-    }
-
-    .section-card p {
-      font-size: 13px;
-      color: #4a525b;
-      line-height: 1.5;
-    }
-
-    .list-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 8px;
-      margin-top: 6px;
-      font-size: 13px;
-      color: #4a525b;
-    }
-
-    .list-grid div::before {
-      content: "• ";
-      color: #2E7D32;
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      margin-top: 8px;
-    }
-
-    .data-table th,
-    .data-table td {
-      padding: 6px 4px;
-      border-bottom: 1px solid #eceff4;
-      text-align: left;
-    }
-
-    .data-table th {
-      width: 40%;
-      color: #7b828a;
-      font-weight: normal;
-    }
-
-    .map-container {
-      margin-top: 8px;
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 260px;
-      border: 0;
-      border-radius: 6px;
-    }
-
-    .plano-img {
-      width: 100%;
-      max-width: 1000px;
-      display: block;
-      margin: 8px auto 0 auto;
-      border-radius: 8px;
-      border: 1px solid #dde2ea;
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
 
     footer {
-      margin-top: 24px;
-      padding: 16px;
-      font-size: 12px;
-      text-align: center;
-      color: #7b828a;
+      padding: 20px; text-align: center; font-size: 12px; color: #7b7a7a; background: #f5f5f5;
     }
 
-    @media (max-width: 900px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      nav {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-      }
+    .whatsapp-float {
+      position: fixed; bottom: 22px; right: 22px; background: #25D366;
+      width: 60px; height: 60px; border-radius: 50%; color: white;
+      display: flex; justify-content: center; align-items: center;
+      font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="header-left">
-    <div class="logo-bg">
-      <!-- logo BG: archivo en la raíz o dentro de img, uso la raíz como lo tenés -->
-      <img src="logo-bg.png" alt="BG Negocios Inmobiliarios">
-      <div>
-        <div class="logo-text-main">BG Negocios Inmobiliarios</div>
-        <div class="logo-text-sub">Asesor: Pedro Benítez · Caaguazú</div>
-      </div>
-    </div>
-
-    <div class="logo-lega">
-      <!-- logo LeGa: el tuyo está dentro de /img -->
-      <img src="img/Logo LeGa Inmobiliaria JPG.jpg" alt="LeGa Inmobiliaria">
-      <div class="logo-lega-text">
-        Proyecto comercializado junto a<br><strong>LeGa Inmobiliaria</strong>
-      </div>
+  <div class="logo">
+    <img src="logo-bg.png" alt="BG Negocios Inmobiliarios" />
+    <div>
+      <div class="logo-text-main">BG Negocios Inmobiliarios</div>
+      <div class="logo-text-sub">Asesor: Pedro Benítez · Caaguazú</div>
     </div>
   </div>
 
   <nav>
-    <a href="index.html">Inicio</a>
-    <a href="index.html#terrenos">Terrenos</a>
-    <a href="index.html#contacto">Contacto</a>
+    <a href="#para-comprar">Comprar</a>
+    <a href="#terrenos">Terrenos</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
-<div class="page">
+<main>
 
-  <!-- MIGAS -->
-  <div class="breadcrumb">
-    <a href="index.html">Inicio</a>
-    <span>›</span>
-    <a href="index.html#terrenos">Terrenos</a>
-    <span>›</span>
-    Residencial Alejandra – Otaño
-  </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="label"><div class="label-dot"></div> Asesoría independiente · Caaguazú</div>
+      <h1>Terrenos seleccionados de distintas inmobiliarias, en un solo lugar</h1>
+      <p>En <strong>BG Negocios Inmobiliarios</strong>, te conecto con las mejores opciones según tu presupuesto.</p>
 
-  <!-- TÍTULO Y TAGS -->
-  <h1 class="main-title">Residencial Alejandra – Lotes de 12x30 en Otaño</h1>
-  <div class="subtitle">Otaño · Paraguay · Proyecto residencial y de inversión</div>
-
-  <div class="tags">
-    <span class="tag tag-green">En venta</span>
-    <span class="tag">Lotes 12x30 (360 m²)</span>
-    <span class="tag">Financiación propia hasta 130 meses</span>
-    <span class="tag">Residencial · Descanso · Inversión</span>
-    <span class="tag">ID proyecto: BG-LEGA-ALEJ-001</span>
-  </div>
-
-  <!-- LAYOUT PRINCIPAL -->
-  <div class="layout">
-
-    <!-- GALERÍA -->
-    <div class="gallery-card">
-      <!-- Foto principal: una de tus fotos reales -->
-      <div id="mainImage" class="main-image"
-           style="background-image: url('img/imgalejandra-real-1.jpg');">
-      </div>
-
-      <div class="thumbs">
-        <div class="thumb"
-             style="background-image:url('img/imgalejandra-real-1.jpg');"
-             onclick="cambiarImagen(this)"></div>
-        <div class="thumb"
-             style="background-image:url('img/imgalejandra-real-2.jpg');"
-             onclick="cambiarImagen(this)"></div>
-        <div class="thumb"
-             style="background-image:url('img/imgalejandra-real-3.jpg');"
-             onclick="cambiarImagen(this)"></div>
-        <div class="thumb"
-             style="background-image:url('img/imgalejandra-real-4.jpg');"
-             onclick="cambiarImagen(this)"></div>
-        <div class="thumb"
-             style="background-image:url('img/imgalejandra-render-1.jpg');"
-             onclick="cambiarImagen(this)"></div>
-        <div class="thumb"
-             style="background-image:url('img/imgalejandra-render-2.jpg');"
-             onclick="cambiarImagen(this)"></div>
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="document.getElementById('terrenos').scrollIntoView()">Ver terrenos</button>
+        <a href="https://wa.me/595986331105" class="btn btn-outline">Whatsapp</a>
       </div>
     </div>
 
-    <!-- PANEL DERECHO -->
-    <aside class="summary-card">
-      <div class="price">Cuotas desde Gs. 500.000 hasta Gs. 2.000.000</div>
-      <div class="price-small">
-        Financiación propia hasta 130 meses · Precio contado con <strong>50% de descuento</strong> (financiable hasta 12 meses).
+    <div class="hero-image">
+      <div class="hero-overlay-card">
+        <strong>Otaño</strong><br />Terrenos con financiación propia
       </div>
-      <div class="code">Proyecto: Residencial Alejandra · Código ref.: BG-LEGA-ALEJ-001</div>
+    </div>
+  </section>
 
-      <div class="summary-row">
-        <div class="summary-item">
-          <strong>Superficie típica</strong>
-          360 m² (12 x 30 m)
+  <!-- SECCIÓN TERRENOS -->
+  <section id="terrenos">
+    <h2>Terrenos destacados</h2>
+    <p class="section-subtitle">Opciones reales disponibles hoy</p>
+
+    <div class="grid">
+      <a href="residencial-alejandra.html">
+        <div class="card">
+          <h3>Residencial Alejandra – Otaño</h3>
+          <p>12×30 · Financiación propia 130 meses</p>
         </div>
-        <div class="summary-item">
-          <strong>Tipo de uso</strong>
-          Residencial · Casa de descanso · Inversión
-        </div>
-        <div class="summary-item">
-          <strong>Ubicación</strong>
-          Otaño, sobre ruta asfaltada
-        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- VIDEO PRINCIPAL -->
+  <section>
+    <h2>Conocé el proyecto en video</h2>
+    <p class="section-subtitle">Vista aérea del barrio Residencial Alejandra</p>
+
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/bcfp3cvnsvg" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p class="section-subtitle">Escribime directo a WhatsApp</p>
+
+    <div class="grid">
+      <div class="card">
+        <p>📱 WhatsApp: <strong>+595 986 331105</strong></p>
+        <p>📧 Correo: <strong>bgnegociosinmo@gmail.com</strong></p>
       </div>
-
-      <!-- BOTONES WHATSAPP -->
-      <a class="btn btn-primary"
-         href="https://wa.me/595986331105?text=Hola%20Pedro,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20lotes%20de%20Residencial%20Alejandra%20(BG-LEGA-ALEJ-001)."
-         target="_blank">
-        Consultar por WhatsApp
-      </a>
-
-      <a class="btn btn-outline"
-         href="https://wa.me/595986331105?text=Hola%20Pedro,%20quiero%20coordinar%20una%20visita%20a%20Residencial%20Alejandra.%20%C2%BFQu%C3%A9%20d%C3%ADas%20ten%C3%A9s%20disponibles?"
-         target="_blank">
-        Agendar visita al proyecto
-      </a>
-
-      <p class="contact-note">
-        Contacto directo con BG Negocios Inmobiliarios – Asesor: Pedro Benítez (+595 986 331105),
-        en alianza con LeGa Inmobiliaria.
-      </p>
-    </aside>
-
-  </div>
-
-  <!-- DESCRIPCIÓN -->
-  <div class="section-card">
-    <h3>Descripción del proyecto</h3>
-    <p>
-      Residencial Alejandra es un barrio planificado en Otaño, pensado para quienes buscan combinar
-      naturaleza, tranquilidad y proyección de crecimiento. Los lotes de 12x30 (360 m²) permiten
-      construir vivienda permanente, casa de descanso o invertir a mediano y largo plazo.
-    </p>
-    <p>
-      El proyecto se desarrolla sobre ruta asfaltada y rodeado de áreas verdes, con infraestructura
-      proyectada para brindar comodidad a las familias y atractivo para el público inversor.
-    </p>
-  </div>
-
-  <!-- CARACTERÍSTICAS -->
-  <div class="section-card">
-    <h3>Características principales</h3>
-    <div class="list-grid">
-      <div>Lotes de 12x30 (360 m²)</div>
-      <div>Ubicación en Otaño, sobre ruta asfaltada</div>
-      <div>Entorno natural y paisaje abierto</div>
-      <div>Ideal para vivienda, descanso o inversión</div>
-      <div>Proyecto comercializado con LeGa Inmobiliaria</div>
-      <div>Financiación propia hasta 130 meses</div>
-      <div>Precio contado con 50% de descuento (hasta 12 meses)</div>
     </div>
-  </div>
+  </section>
 
-  <!-- INFRAESTRUCTURA -->
-  <div class="section-card">
-    <h3>Infraestructura y servicios proyectados</h3>
-    <p>
-      La loteadora se compromete a desarrollar la infraestructura necesaria para que Residencial Alejandra
-      cuente con servicios y espacios de recreación acordes a un barrio moderno:
-    </p>
-    <table class="data-table">
-      <tr>
-        <th>Calles internas</th>
-        <td>Calles empedradas en ejecución.</td>
-      </tr>
-      <tr>
-        <th>Energía eléctrica</th>
-        <td>Energía eléctrica ANDE trifásica comprometida por la empresa.</td>
-      </tr>
-      <tr>
-        <th>Agua potable</th>
-        <td>Pozo artesiano proyectado para abastecer al barrio.</td>
-      </tr>
-      <tr>
-        <th>Áreas de recreación</th>
-        <td>Plazas y parque infantil proyectados.</td>
-      </tr>
-      <tr>
-        <th>Deportes</th>
-        <td>Cancha de tenis / multiuso proyectada.</td>
-      </tr>
-      <tr>
-        <th>Lago artificial</th>
-        <td>Lago recreativo proyectado dentro del emprendimiento.</td>
-      </tr>
-      <tr>
-        <th>Acceso</th>
-        <td>Portón de acceso y control de ingreso proyectados.</td>
-      </tr>
-    </table>
-    <p style="font-size:12px; color:#7b828a; margin-top:6px;">
-      Nota: los plazos de ejecución y entrega de cada servicio se coordinan directamente con la loteadora y LeGa Inmobiliaria.
-    </p>
-  </div>
-
-  <!-- PLANO DEL PROYECTO -->
-  <div class="section-card">
-    <h3>Plano del proyecto y disponibilidad</h3>
-    <p>
-      Mirá el plano general de Residencial Alejandra. Los lotes marcados permiten ver la referencia de
-      espacios verdes, lago, canchas y sectores por etapa.
-    </p>
-    <img src="img/Residencial Alejandra_Plano.png" alt="Plano Residencial Alejandra" class="plano-img">
-  </div>
-
-  <!-- UBICACIÓN -->
-  <div class="section-card">
-    <h3>Ubicación</h3>
-    <p>
-      Residencial Alejandra se encuentra en Otaño, Paraguay, con acceso directo desde la ruta asfaltada.
-      Podés acercarte a conocer la zona y coordinar una visita guiada al proyecto.
-    </p>
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps?q=-26.3519421,-54.7491417&z=15&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-    <p style="font-size:12px; margin-top:6px;">
-      Abrir en Google Maps:
-      <a href="https://www.google.com/maps/place/26%C2%B021'07.0%22S+54%C2%B044'56.9%22W/@-26.3519421,-54.7517166,677m"
-         target="_blank" rel="noopener">
-        Ver ubicación de Residencial Alejandra
-      </a>
-    </p>
-  </div>
-
-</div>
+</main>
 
 <footer>
-  © 2025 BG Negocios Inmobiliarios · Asesor: Pedro Benítez · En alianza con LeGa Inmobiliaria.
+  © 2025 BG Negocios Inmobiliarios · Desarrollado por Pedro Benítez
 </footer>
 
-<script>
-  // Cambiar foto principal al hacer clic en miniaturas
-  function cambiarImagen(el) {
-    var main = document.getElementById('mainImage');
-    main.style.backgroundImage = el.style.backgroundImage;
-  }
-</script>
+<a href="https://wa.me/595986331105" class="whatsapp-float">💬</a>
 
 </body>
 </html>
