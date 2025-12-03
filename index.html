@@ -5,108 +5,217 @@
   <title>BG Negocios Inmobiliarios - Terrenos en Caaguazú</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BG Negocios Inmobiliarios, asesoría independiente liderada por Pedro Benítez. Terrenos de distintas inmobiliarias y desarrolladoras en Caaguazú.">
-
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
 
-    body { background: #ffffff; color: #222222; }
-    
-    a { color: inherit; text-decoration: none; }
-
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 32px; border-bottom: 1px solid #e0e4ea;
-      position: sticky; top: 0; background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(5px); z-index: 10;
+    body {
+      background: #ffffff;
+      color: #222222;
     }
 
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo img { height: 42px; width: auto; }
+    a { color: inherit; }
 
-    .logo-text-main { font-weight: bold; font-size: 18px; color: #2E7D32; }
-    .logo-text-sub { font-size: 11px; color: #6b7a6f; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      border-bottom: 1px solid #e0e4ea;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
 
-    nav a { margin-left: 16px; color: #26332b; font-size: 14px; }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 42px;
+      width: auto;
+    }
+
+    .logo-text-main {
+      font-weight: bold;
+      font-size: 18px;
+      color: #2E7D32;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: #6b7a6f;
+    }
+
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: #2f3439;
+      font-size: 14px;
+    }
+
     nav a:hover { color: #2E7D32; }
 
     .hero {
-      min-height: 70vh; display: flex; align-items: center; justify-content: space-between;
-      padding: 40px; gap: 32px; background: linear-gradient(135deg, #f4f8f5, #ffffff);
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32px;
+      gap: 32px;
+      background: linear-gradient(135deg, #f4f8f5, #ffffff);
       border-bottom: 1px solid #e0e4ea;
     }
 
     .hero-text { max-width: 520px; }
-    .label { display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11px; padding: 4px 10px; border-radius: 999px;
-      border: 1px solid #cfd8dc; margin-bottom: 10px; color: #4b5b4f;
-    }
-    .label-dot { width: 8px; height: 8px; background: #2E7D32; border-radius: 50%; }
 
-    .hero h1 { font-size: 32px; margin-bottom: 16px; color: #1f2a24; }
-    .hero p { margin-bottom: 24px; color: #4d5850; }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #cfd8dc;
+      margin-bottom: 10px;
+      color: #4b5b4f;
+      background: #ffffff;
+    }
+
+    .label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2E7D32;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 16px;
+      color: #1f2a24;
+    }
+
+    .hero p {
+      margin-bottom: 24px;
+      line-height: 1.5;
+      color: #4d5850;
+    }
 
     .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { padding: 10px 18px; border-radius: 999px; cursor: pointer; font-size: 14px; border: none; }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
     .btn-primary { background: #2E7D32; color: white; }
     .btn-primary:hover { background: #256428; }
-    .btn-outline { background: transparent; color: #2E7D32; border: 1px solid #2E7D32; }
+    .btn-outline { border: 1px solid #2E7D32; color: #2E7D32; background: transparent; }
     .btn-outline:hover { background: #e8f4ea; }
 
     .hero-image {
-      flex: 1; min-height: 250px; border-radius: 20px;
-      background-image: url('img/imgalejandra-real-1.jpg');
-      background-size: cover; background-position: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative;
+      flex: 1;
+      min-height: 250px;
+      border-radius: 20px;
+      background-image: url('https://images.pexels.com/photos/1578750/pexels-photo-1578750.jpeg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      position: relative;
     }
 
     .hero-overlay-card {
-      position: absolute; bottom: 12px; right: 12px;
-      background: rgba(255,255,255,0.92); padding: 10px;
-      border-radius: 12px; font-size: 11px; border: 1px solid #d1d9de;
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 11px;
+      border: 1px solid #d1d9de;
+      color: #455a4a;
     }
+
     .hero-overlay-card strong { color: #2E7D32; }
 
-    section { padding: 40px 32px; }
+    section { padding: 32px; }
     h2 { font-size: 24px; margin-bottom: 8px; color: #26332b; }
-    .section-subtitle { font-size: 13px; color: #6b7a6f; margin-bottom: 18px; }
+    .section-subtitle { font-size: 13px; color: #6b7a6f; margin-bottom: 20px; }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 16px; }
-    .card { padding: 16px; border-radius: 16px; border: 1px solid #e0e4ea; background: #fff; }
-
-    .video-wrapper {
-      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-      border-radius: 16px; box-shadow: 0 10px 30px rgba(15,23,42,0.18);
-    }
-    .video-wrapper iframe {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
     }
 
-    footer {
-      padding: 20px; text-align: center; font-size: 12px; color: #7b7a7a; background: #f5f5f5;
+    .card {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid #e0e4ea;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
 
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #c6d1c8;
+    }
+
+    input:focus, textarea:focus {
+      outline: 1px solid #2E7D32;
+      border-color: #2E7D32;
+    }
+
+    textarea { min-height: 100px; resize: vertical; }
+    .hint { font-size: 11px; color: #6b7a6f; }
+
+    /* BOTÓN FLOTANTE */
     .whatsapp-float {
-      position: fixed; bottom: 22px; right: 22px; background: #25D366;
-      width: 60px; height: 60px; border-radius: 50%; color: white;
-      display: flex; justify-content: center; align-items: center;
-      font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
+    .whatsapp-float:hover { background: #1ebe5d; }
   </style>
 </head>
-
 <body>
 
 <header>
   <div class="logo">
-    <img src="logo-bg.png" alt="BG Negocios Inmobiliarios" />
+    <img src="logo-bg.png" alt="BG Negocios Inmobiliarios">
     <div>
       <div class="logo-text-main">BG Negocios Inmobiliarios</div>
       <div class="logo-text-sub">Asesor: Pedro Benítez · Caaguazú</div>
     </div>
   </div>
-
   <nav>
-    <a href="#para-comprar">Comprar</a>
+    <a href="#para-comprar">Buscás un terreno</a>
+    <a href="#para-inmobiliarias">Sos inmobiliaria</a>
     <a href="#terrenos">Terrenos</a>
     <a href="#contacto">Contacto</a>
   </nav>
@@ -117,56 +226,106 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <div class="label"><div class="label-dot"></div> Asesoría independiente · Caaguazú</div>
+      <div class="label">
+        <div class="label-dot"></div>
+        Asesoría independiente · Caaguazú
+      </div>
+
       <h1>Terrenos seleccionados de distintas inmobiliarias, en un solo lugar</h1>
-      <p>En <strong>BG Negocios Inmobiliarios</strong>, te conecto con las mejores opciones según tu presupuesto.</p>
+
+      <p>En <strong>BG Negocios Inmobiliarios</strong>, liderado por Pedro Benítez, te conecto con las mejores opciones de terrenos en Caaguazú según tu presupuesto y objetivos.</p>
 
       <div class="buttons">
-        <button class="btn btn-primary" onclick="document.getElementById('terrenos').scrollIntoView()">Ver terrenos</button>
-        <a href="https://wa.me/595986331105" class="btn btn-outline">Whatsapp</a>
+        <button class="btn btn-primary" onclick="document.getElementById('terrenos').scrollIntoView()">Ver terrenos destacados</button>
+        <a href="https://wa.me/595986331105" class="btn btn-outline">Whatsapp directo</a>
       </div>
     </div>
 
     <div class="hero-image">
       <div class="hero-overlay-card">
-        <strong>Otaño</strong><br />Terrenos con financiación propia
+        <strong>Zona Caaguazú</strong>
+        Opciones con documentación y financiación.
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN TERRENOS -->
+  <!-- PARA COMPRADORES -->
+  <section id="para-comprar">
+    <h2>Si estás buscando un terreno</h2>
+    <p class="section-subtitle">Te acompaño desde la búsqueda hasta la firma.</p>
+    <div class="grid">
+      <div class="card"><h3>Escucho lo que necesitás</h3><p>Zona, precio, tamaño y objetivo.</p></div>
+      <div class="card"><h3>Opciones filtradas</h3><p>Terrenos de distintas inmobiliarias.</p></div>
+      <div class="card"><h3>Visitas reales</h3><p>Coordinación con proyectos aliados.</p></div>
+      <div class="card"><h3>Acompañamiento</h3><p>Transparencia en condiciones y documentos.</p></div>
+    </div>
+  </section>
+
+  <!-- PARA INMOBILIARIAS -->
+  <section id="para-inmobiliarias">
+    <h2>Si sos inmobiliaria</h2>
+    <p class="section-subtitle">Más alcance sin costo fijo.</p>
+    <div class="two-col">
+      <div class="card">
+        <h3>Difusión profesional</h3>
+        <p>Traigo clientes filtrados según tu proyecto.</p>
+      </div>
+      <div class="card">
+        <h3>Proceso</h3>
+        <p>Precalificación, visitas y reportes claros.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERRENOS DESTACADOS -->
   <section id="terrenos">
     <h2>Terrenos destacados</h2>
-    <p class="section-subtitle">Opciones reales disponibles hoy</p>
-
+    <p class="section-subtitle">Proyectos seleccionados de distintas inmobiliarias, comenzando con Residencial Alejandra en alianza con LeGa Inmobiliaria.</p>
     <div class="grid">
-      <a href="residencial-alejandra.html">
-        <div class="card">
-          <h3>Residencial Alejandra – Otaño</h3>
-          <p>12×30 · Financiación propia 130 meses</p>
-        </div>
+
+      <!-- RESIDENCIAL ALEJANDRA -->
+      <a href="residencial-alejandra.html" class="card" style="text-decoration:none;">
+        <h3>Residencial Alejandra – Otaño</h3>
+        <p>🧱 Lotes de 12x30 (360 m²)</p>
+        <p>💵 Financiación propia hasta 130 meses</p>
+        <p>🏷 Cuotas desde Gs. 500.000 – contado 50% OFF</p>
+        <p style="font-size:12px; color:#6b7a6f; margin-top:6px;">
+          Proyecto de LeGa Inmobiliaria · Comercializado por BG Negocios Inmobiliarios.
+        </p>
       </a>
+
+      <!-- Podés ir agregando más proyectos a futuro -->
+      <!--
+      <div class="card">
+        <h3>Otro proyecto futuro</h3>
+        <p>Descripción breve...</p>
+      </div>
+      -->
+
     </div>
   </section>
 
-  <!-- VIDEO PRINCIPAL -->
-  <section>
-    <h2>Conocé el proyecto en video</h2>
-    <p class="section-subtitle">Vista aérea del barrio Residencial Alejandra</p>
-
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/bcfp3cvnsvg" allowfullscreen></iframe>
-    </div>
-  </section>
 
   <!-- CONTACTO -->
   <section id="contacto">
     <h2>Contacto</h2>
-    <p class="section-subtitle">Escribime directo a WhatsApp</p>
+    <p class="section-subtitle">Completá y enviá directo a mi WhatsApp.</p>
 
-    <div class="grid">
+    <div class="two-col">
+
+      <!-- FORMULARIO A WHATSAPP -->
+      <form onsubmit="enviarWhatsApp(event)">
+        <input type="text" id="nombre" placeholder="Nombre completo" required />
+        <input type="tel" id="telefono" placeholder="Tu WhatsApp" required />
+        <textarea id="mensaje" placeholder="Ej.: Busco terreno en Caaguazú, entre 80 y 100 millones..." required></textarea>
+
+        <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+        <p class="hint">Los datos serán enviados directamente al WhatsApp de Pedro Benítez.</p>
+      </form>
+
       <div class="card">
-        <p>📱 WhatsApp: <strong>+595 986 331105</strong></p>
+        <h3>Datos de contacto</h3>
+        <p>📱 WhatsApp: <strong>+595986331105</strong></p>
         <p>📧 Correo: <strong>bgnegociosinmo@gmail.com</strong></p>
       </div>
     </div>
@@ -175,10 +334,32 @@
 </main>
 
 <footer>
-  © 2025 BG Negocios Inmobiliarios · Desarrollado por Pedro Benítez
+  © 2025 BG Negocios Inmobiliarios · Pedro Benítez · Caaguazú.
 </footer>
 
+<!-- BOTÓN flotante -->
 <a href="https://wa.me/595986331105" class="whatsapp-float">💬</a>
+
+<!-- SCRIPT FORMULARIO -->
+<script>
+function enviarWhatsApp(e) {
+  e.preventDefault();
+
+  var nombre = document.getElementById("nombre").value;
+  var telefono = document.getElementById("telefono").value;
+  var mensaje = document.getElementById("mensaje").value;
+
+  var texto = `Nueva consulta:%0A%0A` +
+              `👤 Nombre: ${nombre}%0A` +
+              `📱 WhatsApp del cliente: ${telefono}%0A` +
+              `📝 Mensaje: ${mensaje}%0A%0A` +
+              `---------------------------------%0AEnviado desde la web BG Negocios Inmobiliarios`;
+
+  var url = "https://wa.me/595986331105?text=" + texto;
+
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
